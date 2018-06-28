@@ -1,12 +1,8 @@
 #include "ThreadRAII.h"
 #include "utils.h"
 
-#if __cplusplus == 201103L
-constexpr auto tenMillion = 10000000;         // see Item 15
-                                              // for constexpr
-#elif __cplusplus == 201402L
-constexpr auto tenMillion = 10'000'000;       // C++14
-#endif
+constexpr auto tenMillion = 10000000;       // C++14
+
 
 bool doWork(std::function<bool(int)> filter,  // as before
             int maxVal = tenMillion)
